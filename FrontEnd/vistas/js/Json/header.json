@@ -1,0 +1,11 @@
+[
+    {
+        "red": "fa-facebook",
+        "estilo": "facebookBlanco",
+        "url": "http://facebook.com/"
+    },{
+        "red": "fa-twitter",
+        "estilo": "twitterBlanco",
+        "url": "http://twitter.com/"
+    }
+]
