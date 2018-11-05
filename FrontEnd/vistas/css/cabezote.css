@@ -32,7 +32,7 @@ header #logotipo img{
 }
 
 header #btnCategorias{
-	margin:20px 0;
+	margin:34px 0;
 }
 
 header #btnCategorias p{
@@ -45,7 +45,7 @@ header #btnCategorias p span{
 }
 
 header #buscador{
-	margin:20px 0;
+	margin:34px 0;
 }
 
 header #buscador input{
@@ -60,7 +60,7 @@ header #buscador button{
 }
 
 header #carrito{
-	margin:20px 0;
+	margin:34px 0;
 }
 
 header #carrito button{
@@ -102,7 +102,7 @@ ESCRITORIO GRANDE (LG revisamos en 1366px en adelante)
 	HEADER
 	=============================================*/
 	header #logotipo img{
-		padding:20px 60px;
+		padding:12px 27px;
 		padding-left:0px;
 	}
 	header #carrito{

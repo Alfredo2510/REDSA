@@ -12,20 +12,24 @@
             -->
             <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 social">
                 <ul>
-                    <li>
-                        <a href="http://facebook.com/" target="_blank">
-                            <i class="fa fa-facebook redSocial facebookBlanco" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <a href="http://youtube.com/" target="_blank">
-							<i class="fa fa-youtube redSocial youtubeBlanco" aria-hidden="true"></i>
-						</a>
-					</li>
-                    <li>
-                        <a href="http://twitter.com/" target="_blank">
-                            <i class="fa fa-twitter redSocial twitterBlanco" aria-hidden="true"></i>
-                        </a>
-                    </li>
+
+				<!--
+             ─── INSTANCIAR LAS CLASES Y MÉTODOS PARA PODERLOS UTILIZAR ─────────────────────────────────────────────────────────────
+				 -->
+				 <?php
+					$social = ControladorPlantilla::ctrEstiloPlantilla();
+					$jsonRedesSociales = json_decode($social["redesSociales"],true);
+					
+
+					foreach ($jsonRedesSociales as $key => $value){
+
+						echo '<li>
+								<a href="'.$value["url"].'" target="_blank">
+									<i class="fa '.$value["red"].' redSocial '.$value["estilo"].'" aria-hidden="true"></i>
+								</a>
+							</li>';
+					} 	
+				 ?>
                 </ul>
             </div>
             <!--
@@ -55,7 +59,7 @@
             -->
             <div class="col-lg-3 col-md-3 col-sm-2 col-xs-12" id="logotipo">
 				<a href="#">
-					<img src="http://localhost:8080/REDSA/BackEnd/vistas/img/plantilla/logo.png" class="img-responsive">
+					<img src="http://localhost:8080/REDSA/BackEnd/<?php echo $social["logo"]; ?>" class="img-responsive">
 				</a>
 			</div>
             <!--
@@ -102,64 +106,35 @@
 
         <!--
         ─── CATEGORÍAS ─────────────────────────────────────────────────────────────
-        -->
-        <div class="col-xs-12 backColor" id="categorias">			
-			<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">				
-				<h4>
-					<a href="#" class="pixelCategorias">Sistema de Arranque | Marcha</a>
-				</h4>				
-				<hr>
-				<ul>					
-					<li><a href="#" class="pixelSubCategorias">Marcha Completa</a></li>
-					<li><a href="#" class="pixelSubCategorias">Piezas</a></li>
-					<li><a href="#" class="pixelSubCategorias">Campanas</a></li>
-					<li><a href="#" class="pixelSubCategorias">Impulsores</a></li>
-                    <li><a href="#" class="pixelSubCategorias">Solenoides</a></li>	
-                    <li><a href="#" class="pixelSubCategorias">Armaduras</a></li>							
-				</ul>
-			</div>	
-			<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">				
-				<h4>
-					<a href="#" class="pixelCategorias">Lorem Ipsum</a>
-				</h4>				
-				<hr>
-				<ul>					
-					<li><a href="#" class="pixelSubCategorias">Lorem Ipsum</a></li>
-					<li><a href="#" class="pixelSubCategorias">Lorem Ipsum</a></li>
-					<li><a href="#" class="pixelSubCategorias">Lorem Ipsum</a></li>
-					<li><a href="#" class="pixelSubCategorias">Lorem Ipsum</a></li>
-					<li><a href="#" class="pixelSubCategorias">Lorem Ipsum</a></li>								
-				</ul>
-			</div>	
-			<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">				
-				<h4>
-					<a href="#" class="pixelCategorias">Lorem Ipsum</a>
-				</h4>				
-				<hr>
-				<ul>					
-					<li><a href="#" class="pixelSubCategorias">Lorem Ipsum</a></li>
-					<li><a href="#" class="pixelSubCategorias">Lorem Ipsum</a></li>
-					<li><a href="#" class="pixelSubCategorias">Lorem Ipsum</a></li>
-					<li><a href="#" class="pixelSubCategorias">Lorem Ipsum</a></li>
-					<li><a href="#" class="pixelSubCategorias">Lorem Ipsum</a></li>								
-				</ul>
-			</div>	
-			<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">				
-				<h4>
-					<a href="#" class="pixelCategorias">Lorem Ipsum</a>
-				</h4>				
-				<hr>
-				<ul>					
-					<li><a href="#" class="pixelSubCategorias">Lorem Ipsum</a></li>
-					<li><a href="#" class="pixelSubCategorias">Lorem Ipsum</a></li>
-					<li><a href="#" class="pixelSubCategorias">Lorem Ipsum</a></li>
-					<li><a href="#" class="pixelSubCategorias">Lorem Ipsum</a></li>
-					<li><a href="#" class="pixelSubCategorias">Lorem Ipsum</a></li>								
-				</ul>
-			</div>	
+        -->	
+
+        <div class="col-xs-12 backColor" id="categorias">	
+	
+		<?php
+            $item = null;
+            $valor = null;
+            
+			$categorias = ControladorProductos::ctrMostrarCategorias($item, $valor);
+
+			foreach ($categorias as $key => $value){
+				echo '<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">				
+						<h4>
+							<a href="'.$value["ruta"].'" class="pixelCategorias">'.$value["categoria"].'</a>
+						</h4>				
+						<hr>
+						<ul>';
+
+                        $item = "id_categoria";
+                        $valor = $value["id"];
+						$subcategorias = ControladorProductos::ctrMostrarSubcategorias($item, $valor);
+
+						foreach ($subcategorias as $key => $value){
+							echo '<li><a href="'.$value["ruta"].'" class="pixelSubCategorias">'.$value["subcategoria"].'</a></li>';
+						}
+						echo '</ul>
+					</div>';
+			}
+		?>
 		</div>
-
-
-
     </div>
  </header>
