@@ -1,14 +1,19 @@
 <?php
+
 require_once "conexion.php";
 
 class ModeloPlantilla{
-    static public function mdlEstiloPlantilla($tabla){
 
-        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+	static public function mdlEstiloPlantilla($tabla){
 
-        $stmt -> execute();
+		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
 
-        return $stmt -> fetch();
-        $stmt -> close();
-    }
+		$stmt -> execute();
+
+		return $stmt -> fetch();
+
+		$stmt -> close();
+
+	}
+
 }

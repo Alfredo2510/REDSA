@@ -26,13 +26,9 @@ TOP
 /*=============================================
 HEADER
 =============================================*/
-header #logotipo img{
-	padding: 20px 60px;
-	padding-left: 0px;
-}
 
 header #btnCategorias{
-	margin:34px 0;
+	margin:20px 0;
 }
 
 header #btnCategorias p{
@@ -45,7 +41,7 @@ header #btnCategorias p span{
 }
 
 header #buscador{
-	margin:34px 0;
+	margin:20px 0;
 }
 
 header #buscador input{
@@ -60,7 +56,7 @@ header #buscador button{
 }
 
 header #carrito{
-	margin:34px 0;
+	margin:20px 0;
 }
 
 header #carrito button{
@@ -98,16 +94,20 @@ ESCRITORIO GRANDE (LG revisamos en 1366px en adelante)
 =============================================*/
 
 @media (min-width:1200px){
+
 	/*=============================================
 	HEADER
 	=============================================*/
+
 	header #logotipo img{
-		padding:12px 27px;
+		padding:20px 60px;
 		padding-left:0px;
 	}
+
 	header #carrito{
 		padding-left:100px;
 	}
+
 }
 
 /*=============================================
@@ -115,16 +115,20 @@ ESCRITORIO MEDIANO O TABLET HORIZONTAL (MD revisamos en 1024px)
 =============================================*/
 
 @media (max-width:1199px) and (min-width:992px){
+
 	/*=============================================
 	HEADER
 	=============================================*/
+
 	header #logotipo img{
 		padding:25px 60px;
 		padding-left:0px;
 	}
+
 	header #carrito{
 		padding-left:70px;
 	}
+
 }
 
 /*=============================================
@@ -132,18 +136,23 @@ ESCRITORIO PEQUEÑO O TABLET VERTICAL (SM revisamos en 768px)
 =============================================*/
 
 @media (max-width:991px) and (min-width:768px){
+
 	/*=============================================
 	HEADER
 	=============================================*/
+
 	header #logotipo img{
 		padding:30px 0px;
 	}
+
 	header #carrito{
 		padding-left:55px;
 	}
+
 	header #carrito p{
 		display:none;
 	}
+
 }
 
 /*=============================================
@@ -151,29 +160,38 @@ MOVIL (XS revisamos en 320px)
 =============================================*/
 
 @media (max-width:767px){
+
 	/*=============================================
 	TOP
 	=============================================*/
+
 	#top ul{
 		text-align: center;
 	}
+
 	#top #registro{
 		border-top:1px solid #222;
 	}
+	
 	/*=============================================
 	HEADER
 	=============================================*/
+
 	header #logotipo img{
 		padding:30px;
 		padding-bottom:10px;
 	}
+
 	header #categorias{
 		margin-bottom:10px;
 	}
+
 	header #buscador{
 		margin-bottom:10px;
 	}
+
 	header #carrito{
 		margin:0px;
-	}	
+	}
+	
 }

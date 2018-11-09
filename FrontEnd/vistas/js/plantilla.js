@@ -1,5 +1,5 @@
 /*=============================================
-PLANTILLA (para cambiar los estilos CSS dinámicamente)
+PLANTILLA
 =============================================*/
 
 $.ajax({
@@ -11,7 +11,7 @@ $.ajax({
 		var colorTexto = JSON.parse(respuesta).colorTexto;
 		var barraSuperior = JSON.parse(respuesta).barraSuperior;
 		var textoSuperior = JSON.parse(respuesta).textoSuperior;
-
+		
 		$(".backColor, .backColor a").css({"background": colorFondo,
 											"color": colorTexto})
 

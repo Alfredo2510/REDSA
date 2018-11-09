@@ -2,7 +2,24 @@
 
 class Ruta{
 
-    public function ctrRuta(){
-        return "http://localhost:8080/REDSA/FrontEnd/";
-    }
+	/*=============================================
+	RUTA LADO DEL CLIENTE
+	=============================================*/	
+
+	public function ctrRuta(){
+
+		return "http://localhost:8080/REDSA/FrontEnd/";
+	
+	}
+
+	/*=============================================
+	RUTA LADO DEL SERVIDOR
+	=============================================*/	
+
+	public function ctrRutaServidor(){
+
+		return "http://localhost:8080/REDSA/backend/";
+	
+	}
+
 }

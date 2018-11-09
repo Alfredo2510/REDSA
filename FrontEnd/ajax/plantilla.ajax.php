@@ -1,4 +1,5 @@
 <?php
+
 require_once "../controladores/plantilla.controlador.php";
 require_once "../modelos/plantilla.modelo.php";
 
@@ -8,8 +9,8 @@ class AjaxPlantilla{
 
 		$respuesta = ControladorPlantilla::ctrEstiloPlantilla();
 
-		//echo json_encode($respuesta);
-        echo json_encode($respuesta);
+		echo json_encode($respuesta);
+
 	}
 
 
