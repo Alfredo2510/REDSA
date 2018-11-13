@@ -31,24 +31,20 @@
 	?>
 
 	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plugins/bootstrap.min.css">
-
 	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plugins/font-awesome.min.css">
 
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed" rel="stylesheet">
 
 	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plantilla.css">
-
 	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/cabezote.css">
-
 	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/slide.css">
+	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/productos.css">
 
 	<script src="<?php echo $url; ?>vistas/js/plugins/jquery.min.js"></script>
-
 	<script src="<?php echo $url; ?>vistas/js/plugins/bootstrap.min.js"></script>
-
 	<script src="<?php echo $url; ?>vistas/js/plugins/jquery.easing.js"></script>
+	<script src="<?php echo $url; ?>vistas/js/plugins/jquery.scrollUp.js"></script>
 
 </head>
 
@@ -63,7 +59,7 @@ CABEZOTE
 include "modulos/cabezote.php";
 
 /*=============================================
-CONTENIDO DINÁMICO
+RUTAS
 =============================================*/
 
 $rutas = array();
@@ -121,6 +117,7 @@ if(isset($_GET["ruta"])){
 }else{
 
 	include "modulos/slide.php";
+	include "modulos/destacados.php";
 
 }
 

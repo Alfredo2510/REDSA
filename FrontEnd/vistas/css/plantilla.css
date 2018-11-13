@@ -10,6 +10,10 @@ GLOBAL
 	font-family: 'Ubunt', sans-serif;
 }
 
+h2 small{
+	font-size: 55%;
+}
+
 ul, ol{
 	padding:0px;
 }
@@ -28,7 +32,7 @@ a:visited, a:link, a:focus, a:hover, a:active{
 }
 
 .backColor, .backColor a{
-	background:#47bac1;
+	background: #fa5757;
 	color:white;
 }
 
@@ -127,6 +131,17 @@ ERROR 404
 	color:#333;
 }
 
+/*=============================================
+SCROLL UP 
+=============================================*/
+#scrollUp{
+	bottom: 20px;
+	right: 20px;
+	width: 50px;
+	height: 50px;
+	border-radius: 8px;
+	background: url(../img/plantilla/flecha.jpg);
+}
 
 /*=============================================
 ESCRITORIO GRANDE (LG revisamos en 1366px en adelante)
